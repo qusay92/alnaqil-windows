@@ -1,0 +1,111 @@
+2025-06-21 02:52:44.598 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): The offset specified in a OFFSET clause may not be negative.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](AAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:5d31a808-d5f2-4eeb-be59-153fbf8643c8
+Error Number:10742,State:1,Class:15
+Microsoft.Data.SqlClient.SqlException (0x80131904): The offset specified in a OFFSET clause may not be negative.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](AAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:5d31a808-d5f2-4eeb-be59-153fbf8643c8
+Error Number:10742,State:1,Class:15
+2025-06-21 02:52:44.598 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): The offset specified in a OFFSET clause may not be negative.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](AAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:c98cd9fc-c3e5-44bd-9168-daa3ef4499d0
+Error Number:10742,State:1,Class:15
+Microsoft.Data.SqlClient.SqlException (0x80131904): The offset specified in a OFFSET clause may not be negative.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](AAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:c98cd9fc-c3e5-44bd-9168-daa3ef4499d0
+Error Number:10742,State:1,Class:15
+2025-06-21 02:52:45.754 +03:00 [ERR] Controller : Autos - ActionName : GetAllByUser - Parameter : {"isSearch":false,"vinNumber":"","lotNumber":"","client":0,"auction":0,"buyAccount":0,"container":"","loadPort":0,"destination":0,"city":0,"carId":0,"deliveryFromDate":null,"deliveryToDate":null,"Status":0,"purchaseFromDate":null,"purchaseToDate":null,"ClientBuyerName":"","UpdatePaymentStatus":"","CarName":"","PageNumber":0,"PageSize":100} - Error :  ## Exception.Message = The offset specified in a OFFSET clause may not be negative.
+2025-06-21 02:52:45.754 +03:00 [ERR] Controller : Autos - ActionName : GetAllByUser - Parameter : {"isSearch":false,"vinNumber":"","lotNumber":"","client":0,"auction":0,"buyAccount":0,"container":"","loadPort":0,"destination":0,"city":0,"carId":0,"deliveryFromDate":null,"deliveryToDate":null,"Status":0,"purchaseFromDate":null,"purchaseToDate":null,"ClientBuyerName":"","UpdatePaymentStatus":"","CarName":"","PageNumber":0,"PageSize":10} - Error :  ## Exception.Message = The offset specified in a OFFSET clause may not be negative.
+2025-06-21 02:52:49.803 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): The offset specified in a OFFSET clause may not be negative.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](AAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:c98cd9fc-c3e5-44bd-9168-daa3ef4499d0
+Error Number:10742,State:1,Class:15
+Microsoft.Data.SqlClient.SqlException (0x80131904): The offset specified in a OFFSET clause may not be negative.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](AAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:c98cd9fc-c3e5-44bd-9168-daa3ef4499d0
+Error Number:10742,State:1,Class:15
+2025-06-21 02:52:49.956 +03:00 [ERR] Controller : Autos - ActionName : GetAllByUser - Parameter : {"isSearch":false,"vinNumber":"","lotNumber":"","client":0,"auction":0,"buyAccount":0,"container":"","loadPort":0,"destination":0,"city":0,"carId":0,"deliveryFromDate":null,"deliveryToDate":null,"Status":0,"purchaseFromDate":null,"purchaseToDate":null,"ClientBuyerName":"","UpdatePaymentStatus":"","CarName":"","PageNumber":0,"PageSize":100} - Error :  ## Exception.Message = The offset specified in a OFFSET clause may not be negative.
+2025-06-21 02:52:55.682 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): The offset specified in a OFFSET clause may not be negative.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](AAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:e6e0aa91-d284-47de-bf03-87eeacb40410
+Error Number:10742,State:1,Class:15
+Microsoft.Data.SqlClient.SqlException (0x80131904): The offset specified in a OFFSET clause may not be negative.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](AAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:e6e0aa91-d284-47de-bf03-87eeacb40410
+Error Number:10742,State:1,Class:15
+2025-06-21 02:52:55.798 +03:00 [ERR] Controller : Autos - ActionName : GetAllByUser - Parameter : {"isSearch":false,"vinNumber":"","lotNumber":"","client":0,"auction":0,"buyAccount":0,"container":"","loadPort":0,"destination":0,"city":0,"carId":0,"deliveryFromDate":null,"deliveryToDate":null,"Status":0,"purchaseFromDate":null,"purchaseToDate":null,"ClientBuyerName":"","UpdatePaymentStatus":"","CarName":"","PageNumber":0,"PageSize":100} - Error :  ## Exception.Message = The offset specified in a OFFSET clause may not be negative.
+2025-06-21 15:19:51.526 +03:00 [ERR] Controller : Containers - ActionName : GetAllByUser - Parameter : {"IsSearch":false,"StatusId":3,"ContainerNo":"","BookingNo":"","LoadingFromDate":null,"LoadingToDate":null,"LoadPortId":0,"DestinationId":0,"ShippingLineId":0,"ClientId":0,"ArrivalFromDate":null,"ArrivalToDate":null,"PageNumber":1,"PageSize":100} - Error :  ## Exception.Message = The provider for the source 'IQueryable' doesn't implement 'IAsyncQueryProvider'. Only providers that implement 'IAsyncQueryProvider' can be used for Entity Framework asynchronous operations.
+2025-06-21 15:19:51.679 +03:00 [ERR] Controller : Containers - ActionName : GetAllByUser - Parameter : {"IsSearch":false,"StatusId":3,"ContainerNo":"","BookingNo":"","LoadingFromDate":null,"LoadingToDate":null,"LoadPortId":0,"DestinationId":0,"ShippingLineId":0,"ClientId":0,"ArrivalFromDate":null,"ArrivalToDate":null,"PageNumber":1,"PageSize":100} - Error :  ## Exception.Message = The provider for the source 'IQueryable' doesn't implement 'IAsyncQueryProvider'. Only providers that implement 'IAsyncQueryProvider' can be used for Entity Framework asynchronous operations.
+2025-06-21 15:19:51.834 +03:00 [ERR] Controller : Containers - ActionName : GetAllByUser - Parameter : {"IsSearch":false,"StatusId":3,"ContainerNo":"","BookingNo":"","LoadingFromDate":null,"LoadingToDate":null,"LoadPortId":0,"DestinationId":0,"ShippingLineId":0,"ClientId":0,"ArrivalFromDate":null,"ArrivalToDate":null,"PageNumber":1,"PageSize":100} - Error :  ## Exception.Message = The provider for the source 'IQueryable' doesn't implement 'IAsyncQueryProvider'. Only providers that implement 'IAsyncQueryProvider' can be used for Entity Framework asynchronous operations.
+2025-06-21 15:19:52.367 +03:00 [ERR] Controller : Containers - ActionName : GetAllByUser - Parameter : {"IsSearch":false,"StatusId":2,"ContainerNo":"","BookingNo":"","LoadingFromDate":null,"LoadingToDate":null,"LoadPortId":0,"DestinationId":0,"ShippingLineId":0,"ClientId":0,"ArrivalFromDate":null,"ArrivalToDate":null,"PageNumber":1,"PageSize":100} - Error :  ## Exception.Message = The provider for the source 'IQueryable' doesn't implement 'IAsyncQueryProvider'. Only providers that implement 'IAsyncQueryProvider' can be used for Entity Framework asynchronous operations.
+2025-06-21 15:19:52.530 +03:00 [ERR] Controller : Containers - ActionName : GetAllByUser - Parameter : {"IsSearch":false,"StatusId":2,"ContainerNo":"","BookingNo":"","LoadingFromDate":null,"LoadingToDate":null,"LoadPortId":0,"DestinationId":0,"ShippingLineId":0,"ClientId":0,"ArrivalFromDate":null,"ArrivalToDate":null,"PageNumber":1,"PageSize":100} - Error :  ## Exception.Message = The provider for the source 'IQueryable' doesn't implement 'IAsyncQueryProvider'. Only providers that implement 'IAsyncQueryProvider' can be used for Entity Framework asynchronous operations.
+2025-06-21 15:19:53.399 +03:00 [ERR] Controller : Containers - ActionName : GetAllByUser - Parameter : {"IsSearch":false,"StatusId":1,"ContainerNo":"","BookingNo":"","LoadingFromDate":null,"LoadingToDate":null,"LoadPortId":0,"DestinationId":0,"ShippingLineId":0,"ClientId":0,"ArrivalFromDate":null,"ArrivalToDate":null,"PageNumber":1,"PageSize":100} - Error :  ## Exception.Message = The provider for the source 'IQueryable' doesn't implement 'IAsyncQueryProvider'. Only providers that implement 'IAsyncQueryProvider' can be used for Entity Framework asynchronous operations.
+2025-06-21 15:19:53.552 +03:00 [ERR] Controller : Containers - ActionName : GetAllByUser - Parameter : {"IsSearch":false,"StatusId":1,"ContainerNo":"","BookingNo":"","LoadingFromDate":null,"LoadingToDate":null,"LoadPortId":0,"DestinationId":0,"ShippingLineId":0,"ClientId":0,"ArrivalFromDate":null,"ArrivalToDate":null,"PageNumber":1,"PageSize":100} - Error :  ## Exception.Message = The provider for the source 'IQueryable' doesn't implement 'IAsyncQueryProvider'. Only providers that implement 'IAsyncQueryProvider' can be used for Entity Framework asynchronous operations.

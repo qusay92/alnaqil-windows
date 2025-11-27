@@ -1,0 +1,134 @@
+<section class="scored-items">
+    <div class="container-fluid page-body-wrapper">
+      <div class="row">
+    
+          <div class="col-xl-3 col-md-6 mb-4 grid-margin stretch-card">
+              <div class="card"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div>
+              <div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+              <div class="line-chart-row-title">{{'DashboardComponent.TotalShipping' | translate}}</div>
+
+                  <div class="card-body">
+                      <div class="d-flex align-items-center justify-content-between">
+                          <h2 class="text-dark font-weight-bold">{{totalCars}}</h2>
+                          <i class="bx bxs-ship bx-lg text-muted"></i>
+
+                      </div>
+                  </div>
+                  <!-- <canvas id="allProducts"  style="display: block;  height: 3rem;" class="chartjs-render-monitor"></canvas> -->
+              </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 mb-4 grid-margin stretch-card">
+              <div class="card"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                  <div class="card-body">
+                      <div class="d-flex align-items-center justify-content-between">
+                          <h2 class="text-dark font-weight-bold">{{clientBalance?.total}}</h2>
+                          <i class="bx bx-dollar bx-lg text-muted"></i> 
+
+                      </div>
+                  </div>
+                  <!-- <canvas id="invoices"  style="display: block;  height: 3rem;" class="chartjs-render-monitor"></canvas> -->
+                  <div class="line-chart-row-title">{{'DashboardComponent.TotalCharge' | translate}}</div>
+              </div>
+          </div>
+          <div class="col-xl-3 col-md-6 mb-4 grid-margin stretch-card">
+            <div class="card"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h2 class="text-dark font-weight-bold">{{clientBalance?.paid}}</h2>
+                        <i class="bx bx-dollar bx-lg text-muted"></i>
+
+                    </div>
+                </div>
+                <!-- <canvas id="invoices"  style="display: block;  height: 3rem;" class="chartjs-render-monitor"></canvas> -->
+                <div class="line-chart-row-title">{{'DashboardComponent.TotalPaid' | translate}}</div>
+            </div>
+        </div>
+          <div class="col-xl-3 col-md-6 mb-4 grid-margin stretch-card">
+              <div class="card"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                  <div class="card-body">
+                      <div class="d-flex align-items-center justify-content-between">
+                          <h2 class="text-dark font-weight-bold">{{totalSeaCars}}</h2>
+                          <i class="bx bxs-hourglass-top bx-lg text-muted"></i>
+
+                      </div>
+                  </div>
+                  <!-- <canvas id="projects"  style="display: block;  height: 3rem;" class="chartjs-render-monitor"></canvas> -->
+                  <div class="line-chart-row-title">{{'DashboardComponent.Loaded' | translate}}</div>
+              </div>
+          </div>
+          <div class="col-xl-3 col-md-6 mb-4 grid-margin stretch-card">
+              <div class="card"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                  <div class="card-body">
+                      <div class="d-flex align-items-center justify-content-between">
+                          <h2 class="text-dark font-weight-bold">{{totalArrivedCars}}</h2>
+                          <i class="bx bxs-check-shield bx-lg text-muted"></i>
+
+                      </div>
+                  </div>
+                  <!-- <canvas id="orderRecieved"  style="display: block;  height: 3rem;" class="chartjs-render-monitor"></canvas> -->
+                  <div class="line-chart-row-title">{{'DashboardComponent.Arrived' | translate}}</div>
+              </div>
+          </div>
+          <div class="col-xl-3 col-md-6 mb-4 grid-margin stretch-card">
+              <div class="card"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                  <div class="card-body">
+                      <div class="d-flex align-items-center justify-content-between">
+                          <h2 class="text-dark font-weight-bold">{{totalBoughtNewCars}}</h2>
+                          <i class="bx bxs-car bx-lg text-muted"></i>
+                      </div>
+                  </div>
+                  <!-- <canvas id="transactions"  style="display: block;  height: 3rem;" class="chartjs-render-monitor"></canvas> -->
+                  <div class="line-chart-row-title">{{'DashboardComponent.NewPurchase' | translate}}</div>
+              </div>
+          </div>
+          <div class="col-xl-3 col-md-6 mb-4 grid-margin stretch-card">
+            <div class="card"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h2 class="text-dark font-weight-bold">{{archivedAuto}}</h2>
+                        <i class="bx bxs-file-archive bx-lg text-muted"></i>
+
+                    </div>
+                </div>
+                <!-- <canvas id="transactions"  style="display: block;  height: 3rem;" class="chartjs-render-monitor"></canvas> -->
+                <div class="line-chart-row-title">{{'DashboardComponent.Archived' | translate}}</div>
+            </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="charts">
+  <div class="container-fluid page-body-wrapper">
+          <div class="row">
+          <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+              <div class="card-body">
+                  <h4 class="card-title">{{'DashboardComponent.Vehicles' | translate}}</h4>
+                  <canvas id=chartHours width="400" height="170"></canvas>
+              </div>
+              </div>
+          </div>
+          <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">{{'DashboardComponent.Containers' | translate}}</h4>
+                <canvas id="speedChart" width="400" height="170"></canvas>
+            </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- <div class="row justify-content-center">
+          <div class="col-lg-7 col-xl-5">
+              <div class="card">
+              <div class="card-body">
+                  <h4 class="card-title">Vehicle stats</h4>
+                  <canvas id="chartEmail"></canvas>
+              </div>    
+              </div>
+          </div>
+      </div> -->
+  </div>
+</section>

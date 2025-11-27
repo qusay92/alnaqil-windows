@@ -1,0 +1,6 @@
+2025-06-20 15:49:32.920 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"Naqil2025^^&"} - Error :  ## Exception.Message = كلمة سر خاطئة
+2025-06-20 15:49:32.920 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"Naqil2025^^&"} - Error :  ## Exception.Message = كلمة سر خاطئة
+2025-06-20 15:49:43.128 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"Naqil2025^^&"} - Error :  ## Exception.Message = كلمة سر خاطئة
+2025-06-20 15:49:53.028 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"Naqil2025^^&"} - Error :  ## Exception.Message = كلمة سر خاطئة
+2025-06-20 15:49:53.178 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"Naqil2025^^&"} - Error :  ## Exception.Message = كلمة سر خاطئة
+2025-06-20 15:50:05.177 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"Admin"} - Error :  ## Exception.Message = كلمة سر خاطئة

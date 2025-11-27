@@ -1,0 +1,28 @@
+@media (max-width: 767.98px){
+    :host ::ng-deep .p-dropdown{
+        width: 100%;
+      }
+      :host ::ng-deep .p-calendar {
+        width: 100%;
+  
+      }
+      :host ::ng-deep .p-inputtext {
+        width: 100%;
+  
+      }
+      :host ::ng-deep .modal-dialog .p-dropdown {
+        width: 100%;
+  
+      }
+      :host ::ng-deep .modal-dialog .p-calendar {
+        width: 100%;
+  
+      }
+      :host ::ng-deep .modal-dialog .p-inputtext {
+        width: 100%;
+  
+      }
+      .modal-open .abbas-dashboard input.form-control[type=text]{
+        width: 23rem;
+      }
+  }
