@@ -29,10 +29,16 @@ import { LanguagesEnum } from "src/enum/LanguagesEnum";
       }
 
       getCurrentLang() {
-        if (localStorage.getItem("currantLang") != LanguagesEnum[LanguagesEnum.Ar]
-          && localStorage.getItem("currantLang") != LanguagesEnum[LanguagesEnum.En])
+        const currentLang = localStorage.getItem("currantLang");
+
+        // Validate language
+        if (currentLang !== LanguagesEnum[LanguagesEnum.Ar] &&
+            currentLang !== LanguagesEnum[LanguagesEnum.En]) {
           localStorage.setItem("currantLang", LanguagesEnum[LanguagesEnum.Ar]);
-        return JSON.parse(localStorage.getItem("currantLang") || '{}');
+          return LanguagesEnum[LanguagesEnum.Ar];
+        }
+
+        return currentLang || LanguagesEnum[LanguagesEnum.Ar];
       }
 
       private useCurrent() {

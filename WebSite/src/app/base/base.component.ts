@@ -25,17 +25,23 @@ paginate=appSettings.pageinate;
     translate.setDefaultLang('ar');
 
     const browserLang = translate.getBrowserLang();
-    translate.use('ar');
 
-    if (
-      localStorage.getItem('currantLang') == 'ar' ||
-      localStorage.getItem('currantLang') == 'en'
-    ) {
-      translate.use(localStorage.getItem('currantLang') || '{}');
+    // Get current language from localStorage with proper validation
+    let currentLang = localStorage.getItem('currantLang');
+
+    // Validate and set language
+    if (currentLang === 'ar' || currentLang === 'en') {
+      translate.use(currentLang);
+    } else {
+      // Default to Arabic if invalid or not set
+      currentLang = 'ar';
+      localStorage.setItem('currantLang', currentLang);
+      translate.use(currentLang);
     }
 
     this.resource.currentCulture.subscribe((res) => {
       translate.use(res);
+      localStorage.setItem('currantLang', res);
       window.location.reload();
     });
 

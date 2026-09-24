@@ -237,8 +237,29 @@ paginate=appSettings.pageinate;
   }
 
   translateLanguageTo(lang: string) {
+    // Validate language
+    if (lang !== 'ar' && lang !== 'en') {
+      lang = 'ar';
+    }
+
     localStorage.setItem('currantLang', lang);
     this.translate.use(lang);
+    this.selectedCulture = lang;
+
+    // Update HTML attributes for RTL/LTR
+    const htmlElement = document.documentElement;
+    htmlElement.setAttribute('lang', lang);
+
+    if (lang === 'ar') {
+      htmlElement.setAttribute('dir', 'rtl');
+      document.body.classList.add('rtl');
+      document.body.classList.remove('ltr');
+    } else {
+      htmlElement.setAttribute('dir', 'ltr');
+      document.body.classList.add('ltr');
+      document.body.classList.remove('rtl');
+    }
+
     this.HandleResources();
 
     if (this.selectedCulture == 'en') this.ActionName = 'Login';

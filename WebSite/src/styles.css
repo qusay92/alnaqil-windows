@@ -2,3 +2,24 @@
 body.loaded {
     padding-top: 90px;
 }
+
+/* RTL Support for Arabic */
+html[dir="rtl"] body {
+    text-align: right;
+    direction: rtl;
+}
+
+html[dir="ltr"] body {
+    text-align: left;
+    direction: ltr;
+}
+
+/* Ensure proper text rendering for Arabic */
+html[lang="ar"] {
+    font-family: 'OpenSans-Regular', 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+
+/* Ensure proper bidi isolation for mixed content */
+html[dir="rtl"] .bidi-isolate {
+    unicode-bidi: isolate;
+}

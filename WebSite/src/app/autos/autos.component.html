@@ -340,7 +340,7 @@
 
                 <!--
                 <div class="text-center">
-                  <pagination-controls [responsive]='true' (pageChange)="page = $event" id='first'></pagination-controls>                 
+                  <pagination-controls previousLabel="{{ 'General.Previous' | translate }}" nextLabel="{{ 'General.Next' | translate }}" [responsive]='true' (pageChange)="page = $event" id='first'></pagination-controls>                 
                 </div>-->
 
                 <!-- pagination -->
@@ -352,18 +352,18 @@
                     class="btn btn-sm btn-primary me-2" 
                     (click)="prevPage()" 
                     [disabled]="currentPage === 1">
-                    Previous
+                    {{ 'General.Previous' | translate }}
                   </button>
                   
                   <span class="align-middle">
-                    Page {{ currentPage }} of {{ Math.ceil(totalRecords / pageSize) }}
+                    {{ 'General.Page' | translate }} {{ currentPage }} {{ 'General.Of' | translate }} {{ Math.ceil(totalRecords / pageSize) }}
                   </span>
 
                   <button 
                     class="btn btn-sm btn-primary ms-2" 
                     (click)="nextPage()" 
                     [disabled]="(currentPage * pageSize) >= totalRecords">
-                    Next
+                    {{ 'General.Next' | translate }}
                   </button>
                 </div>
               </div>
@@ -435,7 +435,7 @@
                               </button> -->
                             </div>
                             <ng-image-slider [hidden]="images.length==0" [images]="images" [animationSpeed]="0.1" [showDescription]="false" [infinite]="true"  #nav></ng-image-slider>
-                              <p [hidden]="images.length>0" > No Images available </p>
+                              <p [hidden]="images.length>0" > {{ 'General.NoImagesAvailable' | translate }} </p>
 
                             <div class="slider slider-info">
                           
@@ -456,7 +456,7 @@
                                 <li class="list-group-item">{{'AutosComponent.BuyingAccount' | translate}} <span class="badge-span">{{selectAuto.buyAccountName}}</span></li>
                                 <li class="list-group-item">{{'AutosComponent.City' | translate}}  <span class="badge-span">{{selectAuto.cityName}}</span></li>
                                 <li class="list-group-item">{{'AutosComponent.LoadPort' | translate}} <span class="badge-span">{{selectAuto.loadPortName}}</span></li>
-                                <li class="list-group-item">{{'AutosComponent.Status' | translate}} <span class="badge-span">{{selectAuto.carStatusStr}}</span></li>
+                                <li class="list-group-item">{{'AutosComponent.Status' | translate}} <span class="badge-span">{{ selectAuto.carStatusStr | statusKey | translate }}</span></li>
                               </ul>
                             </div>
                             <div class="col-md-6">
@@ -497,7 +497,7 @@
                             </div>
                           <div class="auto-table-btns">
                         
-                            <button type="button" class="btn btn-inverse-print btn-icon" title="print" (click)="print()" *ngIf="hasPermission">
+                            <button type="button" class="btn btn-inverse-print btn-icon" title="{{ 'General.Print' | translate }}" (click)="print()" *ngIf="hasPermission">
                               <i class="mdi mdi-printer"></i>
                             </button>
                             <a *ngIf="hasPermission" class="btn btn-primary" routerLink="../payment">{{'AutosComponent.EditPayment' | translate}}</a>
@@ -540,7 +540,7 @@
                             </table>
                           </div>
                           <div class="pagination text-center">
-                            <pagination-controls [responsive]='true' (pageChange)="pagepayment = $event" id="second"></pagination-controls>
+                            <pagination-controls previousLabel="{{ 'General.Previous' | translate }}" nextLabel="{{ 'General.Next' | translate }}" [responsive]='true' (pageChange)="pagepayment = $event" id="second"></pagination-controls>
                           </div>
                           <div class="details-total">
                             <ul class="list-group">
@@ -808,7 +808,7 @@
                         <ul>
                           <li><strong>{{'AutosComponent.Container' | translate}}: </strong> <br>{{item.containerSerial}} </li>
                           <li><strong>{{'AutosComponent.Booking' | translate}}: </strong> <br>{{item.bookNo}} </li>
-                          <li><strong>{{'AutosComponent.Status' | translate}}: </strong> <br>{{item.carStatusStr}}
+                          <li><strong>{{'AutosComponent.Status' | translate}}: </strong> <br>{{ item.carStatusStr | statusKey | translate }}
                           </li>
                         </ul>
                       </td>
@@ -877,7 +877,7 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header" [id]="'heading'+item.labeltext">
                     <button class="accordion-button" [ngClass]="{'collapsed': !item.show}" type="button" data-toggle="collapse" [attr.data-target]="'#' + item.labeltext" aria-expanded="true" [attr.aria-controls]="'#' + item.label" (click)="onChangeAccordion(item)">
-                      {{item.label}}
+                      {{ item.label == 'All' ? ('General.All' | translate) : item.label }}
                     </button>
                   </h2>
                   <div [id]="item.labeltext" class="accordion-collapse collapse" [ngClass]="{'show': item.show}" [attr.aria-labelledby]="'heading'+item.labeltext" data-parent="#accordionExample">

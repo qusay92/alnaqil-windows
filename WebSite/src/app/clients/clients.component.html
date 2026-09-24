@@ -33,7 +33,7 @@
                             
                             <div class="form-group password-form">
                               <label for="password">{{'ClientsComponent.Password' | translate }}<span></span></label>
-                              <input [type]=" showPassword ? 'text' : 'password' "  id="clientpassword" class="form-control" placeholder="Password" formControlName="password" [(ngModel)] ='model.actualPass'>
+                              <input [type]=" showPassword ? 'text' : 'password' "  id="clientpassword" class="form-control" placeholder="{{ 'General.Password' | translate }}" formControlName="password" [(ngModel)] ='model.actualPass'>
                               <i class="mdi mdi-eye" id="toggleclientPassword" (click)='showHidePassword()'></i>
                               <span style="color: red" [hidden]="ngForm.controls['password'].valid || !isSubmitted">{{'ClientsComponent.PasswordIsRequired' | translate }}</span>
                             </div>
@@ -87,7 +87,7 @@
                   
                 </div>
                 <div class="text-center">
-                  <pagination-controls [responsive]='true' (pageChange)="page = $event"></pagination-controls>
+                  <pagination-controls previousLabel="{{ 'General.Previous' | translate }}" nextLabel="{{ 'General.Next' | translate }}" [responsive]='true' (pageChange)="page = $event"></pagination-controls>
                 </div>
                 <div class="input-group clients-search">
                   <div class="input-group-prepend">

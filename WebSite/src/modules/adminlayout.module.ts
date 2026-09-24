@@ -44,6 +44,7 @@ import { ButtonModule } from 'primeng/button';
 // import {MenuModule} from 'primeng/menu';
 import {MenuItem} from 'primeng/api';
 import { UseUtcDirective } from 'src/services/primengdate.directive';
+import { StatusKeyPipe } from 'src/services/status-key.pipe';
 export function httpTranslateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -83,7 +84,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     BalanceComponent,
     BaseComponent,
     ArchiveComponent,
-    UseUtcDirective
+    UseUtcDirective,
+    StatusKeyPipe
   ],
   exports: [],
   providers: [

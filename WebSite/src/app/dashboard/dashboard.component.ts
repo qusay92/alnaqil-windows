@@ -7,6 +7,7 @@ import { BaseComponent } from '../base/base.component';
 import { Chart } from 'chart.js';
 import { DOCUMENT } from '@angular/common';
 import { appSettings } from 'src/appSettings/appSettings';
+import { normalizeStatus } from 'src/services/status-key.pipe';
 //import Chart from 'chart.js';
 
 @Component({
@@ -70,9 +71,9 @@ export class DashboardComponent extends BaseComponent implements OnInit {
       if (res && res.data && res.data.length > 0) {
         this.carsData = res.data;
         this.totalCars = res.totalRecords;
-        this.totalBoughtNewCars = res.data.filter((x: any) => x.carStatusStr == 'Bought New').length;
-        this.totalSeaCars = res.data.filter((x: any) => x.carStatusStr == 'loaded').length;
-        this.totalArrivedCars = res.data.filter((x: any) => x.carStatusStr == 'arrived').length;
+        this.totalBoughtNewCars = res.data.filter((x: any) => normalizeStatus(x.carStatusStr) == 'boughtnew').length;
+        this.totalSeaCars = res.data.filter((x: any) => normalizeStatus(x.carStatusStr) == 'loaded').length;
+        this.totalArrivedCars = res.data.filter((x: any) => normalizeStatus(x.carStatusStr) == 'arrived').length;
         this.archivedAuto = res.data[0].archivedAuto;
       }
       this.draw();
@@ -155,7 +156,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
   }
 
   totalArrivedStatisitcs() {
-    let currentYearCars = this.carsData.filter((x: any) => x.carStatusStr == 'arrived' && new Date(x.creationDate).getFullYear() == this.currentYear);
+    let currentYearCars = this.carsData.filter((x: any) => normalizeStatus(x.carStatusStr) == 'arrived' && new Date(x.creationDate).getFullYear() == this.currentYear);
     let data = [];
 
     let jan = currentYearCars.filter((x: any) => new Date(x.arrivalDate).getMonth() == 0).length;
@@ -176,7 +177,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
   }
 
   totalBoughtNewStatisitcs() {
-    let currentYearCars = this.carsData.filter((x: any) => x.carStatusStr == 'Bought New' && new Date(x.creationDate).getFullYear() == this.currentYear);
+    let currentYearCars = this.carsData.filter((x: any) => normalizeStatus(x.carStatusStr) == 'boughtnew' && new Date(x.creationDate).getFullYear() == this.currentYear);
     let data = [];
 
     let jan = currentYearCars.filter((x: any) => new Date(x.creationDate).getMonth() == 0).length;
@@ -197,7 +198,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
   }
 
   totalLoadedStatisitcs() {
-    let currentYearCars = this.carsData.filter((x: any) => x.carStatusStr == 'loaded' && new Date(x.creationDate).getFullYear() == this.currentYear);
+    let currentYearCars = this.carsData.filter((x: any) => normalizeStatus(x.carStatusStr) == 'loaded' && new Date(x.creationDate).getFullYear() == this.currentYear);
     let data = [];
 
     let jan = currentYearCars.filter((x: any) => new Date(x.departureDate).getMonth() == 0).length;
@@ -218,7 +219,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
   }
 
   totalArrivedContainers() {
-    let currentYearContainers = this.containersData.filter((x: any) => x.containerStatusStr == 'arrived' && new Date(x.creationDate).getFullYear() == this.currentYear);
+    let currentYearContainers = this.containersData.filter((x: any) => normalizeStatus(x.containerStatusStr) == 'arrived' && new Date(x.creationDate).getFullYear() == this.currentYear);
     let data = [];
 
     let jan = currentYearContainers.filter((x: any) => new Date(x.arrivalDate).getMonth() == 0).length;
@@ -239,7 +240,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
   }
 
   totalawaitingLoadContainers() {
-    let currentYearContainers = this.containersData.filter((x: any) => x.containerStatusStr == 'awaitingload' && new Date(x.creationDate).getFullYear() == this.currentYear);
+    let currentYearContainers = this.containersData.filter((x: any) => normalizeStatus(x.containerStatusStr) == 'awaitingload' && new Date(x.creationDate).getFullYear() == this.currentYear);
     let data = [];
 
     let jan = currentYearContainers.filter((x: any) => new Date(x.creationDate).getMonth() == 0).length;
@@ -260,7 +261,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
   }
 
   totalDeparturedContainers() {
-    let currentYearContainers = this.containersData.filter((x: any) => x.containerStatusStr == 'departured' && new Date(x.creationDate).getFullYear() == this.currentYear);
+    let currentYearContainers = this.containersData.filter((x: any) => normalizeStatus(x.containerStatusStr) == 'departured' && new Date(x.creationDate).getFullYear() == this.currentYear);
     let data = [];
 
     let jan = currentYearContainers.filter((x: any) => new Date(x.departureDate).getMonth() == 0).length;
@@ -281,6 +282,19 @@ export class DashboardComponent extends BaseComponent implements OnInit {
   }
 
   draw() {
+    // chart legends must be translated, so wait until the language file is loaded
+    this.translate.get('Status.arrived').subscribe(() => this.buildCharts());
+  }
+
+  // Short month names in the current language (Jan..Dec / يناير..ديسمبر)
+  private monthLabels(): string[] {
+    const lang = this.translate.currentLang || 'ar';
+    return Array.from({ length: 12 }, (_, i) => new Date(2000, i, 1).toLocaleString(lang, { month: 'short' }));
+  }
+
+  buildCharts() {
+    const t = (key: string) => this.translate.instant(key);
+    const months = this.monthLabels();
     this.chartColor = "#FFFFFF";
 
     this.canvas = document.getElementById("chartHours");
@@ -290,10 +304,10 @@ export class DashboardComponent extends BaseComponent implements OnInit {
       type: 'line',
 
       data: {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        labels: months,
 
         datasets: [{
-            label: 'boughtnew',
+            label: t('Status.boughtnew'),
             borderColor: "#6bd098",
             backgroundColor: "#6bd098",
             pointBackgroundColor: "#6bd098",
@@ -306,7 +320,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
            // tension: 0.1
           },
           {
-            label: 'arrived',
+            label: t('Status.arrived'),
             borderColor: "#51cbce",
             backgroundColor: "#51cbce",
             pointBackgroundColor: "#51cbce",
@@ -319,7 +333,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
            // tension: 0.1
           },
           {
-            label: 'all',
+            label: t('General.All'),
             borderColor: "#fcc468",
             backgroundColor: "#fcc468",
             pointBackgroundColor: "#fcc468",
@@ -332,7 +346,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
           //  tension: 0.1
           },
           {
-            label: 'loaded',
+            label: t('Status.loaded'),
             borderColor: "#ef8157",
             backgroundColor: "#ef8157",
             pointBackgroundColor: "#ef8157",
@@ -426,7 +440,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
 
     var awaitingLoad = {
       data: this.totalawaitingLoadContainers(),
-      label: 'awaitingload',
+      label: t('Status.awaitingload'),
       borderColor: '#fbc658',
       backgroundColor: '#fbc658',
       pointBorderColor: '#fbc658',
@@ -437,7 +451,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
 
     var departured = {
       data: this.totalDeparturedContainers(),
-      label: 'departured',
+      label: t('Status.departured'),
       borderColor: '#51CACF',
       backgroundColor: '#51CACF',
       pointBorderColor: '#51CACF',
@@ -448,7 +462,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
 
     var arrived = {
       data: this.totalArrivedContainers(),
-      label: 'arrived',
+      label: t('Status.arrived'),
       borderColor: '#ef8157',
       backgroundColor: '#ef8157',
       pointBorderColor: '#ef8157',
@@ -458,7 +472,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
     };
 
     var speedData = {
-      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      labels: months,
       datasets: [/*awaitingLoad, */departured, arrived]
     };
 

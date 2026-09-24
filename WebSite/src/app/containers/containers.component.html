@@ -87,11 +87,11 @@
             <input type="hidden" id="creationDate" name="creationDate" [(ngModel)] ='model.creationDate' formControlName="creationDate">
 
                 <div class="form-group">
-                    <input pInputText type="text" name="container-no" placeholder="Container No" formControlName="serialNumber" [(ngModel)] ='model.serialNumber' required>
+                    <input pInputText type="text" name="container-no" placeholder="{{ 'General.ContainerNo' | translate }}" formControlName="serialNumber" [(ngModel)] ='model.serialNumber' required>
                     <span style="color: red" [hidden]="ngAddUpdateForm.controls['serialNumber'].valid || !isSubmitted">{{'ContainersComponent.ContainerNoIsRequired' | translate}}</span>
                 </div>
                 <div class="form-group">
-                  <input pInputText type="text" name="booking-no" placeholder="Book No" formControlName="bookNo" [(ngModel)] ='model.bookNo' required>
+                  <input pInputText type="text" name="booking-no" placeholder="{{ 'General.BookNo' | translate }}" formControlName="bookNo" [(ngModel)] ='model.bookNo' required>
                   <span style="color: red" [hidden]="ngAddUpdateForm.controls['bookNo'].valid || !isSubmitted">{{'ContainersComponent.BookNoIsRequired' | translate}}</span>
                 </div>
                 <div class="form-group">
@@ -364,7 +364,7 @@
 
                   </div>
                  <ng-image-slider [animationSpeed]="0.1" [infinite]="true"[hidden]="autoImages.length==0" [images]="autoImages" #nav></ng-image-slider>
-                            <p [hidden]="autoImages.length>0" > No Images available </p>
+                            <p [hidden]="autoImages.length>0" > {{ 'General.NoImagesAvailable' | translate }} </p>
                   <!-- <div class="slider slider-info">
                     <p-galleria #galleria [value]="autoImages" [(activeIndex)]="activeIndex_auto"
                     [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '640px','margin': '0 auto'}" [numVisible]="5"
@@ -408,7 +408,7 @@
                     <li class="list-group-item">{{'ContainersComponent.BuyingAccount' | translate}} <span class="badge-span">{{selectAuto.buyAccountName}}</span></li>
                     <li class="list-group-item">{{'ContainersComponent.City' | translate}}  <span class="badge-span">{{selectAuto.cityName}}</span></li>
                     <li class="list-group-item">{{'ContainersComponent.LoadPort' | translate}} <span class="badge-span">{{selectAuto.loadPortName}}</span></li>
-                    <li class="list-group-item">{{'ContainersComponent.Status' | translate}} <span class="badge-span">{{selectAuto.carStatusStr}}</span></li>
+                    <li class="list-group-item">{{'ContainersComponent.Status' | translate}} <span class="badge-span">{{ selectAuto.carStatusStr | statusKey | translate }}</span></li>
                   </ul>
                 </div>
                 <div class="col-md-6">
@@ -491,7 +491,7 @@
                 </table>
               </div>
               <div class="pagination text-center">
-                <pagination-controls [responsive]='true' (pageChange)="pagepayment = $event" id='second'></pagination-controls>
+                <pagination-controls previousLabel="{{ 'General.Previous' | translate }}" nextLabel="{{ 'General.Next' | translate }}" [responsive]='true' (pageChange)="pagepayment = $event" id='second'></pagination-controls>
                
               </div>
               <div class="details-total">
@@ -533,7 +533,7 @@
           </div>
                 <div class="main">
         <ng-image-slider [animationSpeed]="0.1" [infinite]="true"[hidden]="images.length==0" [images]="images" #nav></ng-image-slider>
-                  <p [hidden]="images.length>0" > No Images available </p>
+                  <p [hidden]="images.length>0" > {{ 'General.NoImagesAvailable' | translate }} </p>
 
                   <div class="slider slider-info">
                     
@@ -575,7 +575,7 @@
                     <li class="list-group-item">{{'ContainersComponent.ContainerNo' | translate}}  <span class="badge-span">{{selectContainer.serialNumber}}</span></li>
                     <li class="list-group-item">{{'ContainersComponent.DepartureDate' | translate}} <span class="badge-span">{{selectContainer.departureDateStr}}</span></li>
                     <li class="list-group-item">{{'ContainersComponent.ArrivalDate' | translate}}<span class="badge-span">{{selectContainer.arrivalDateStr}}</span></li>
-                    <li class="list-group-item">{{'ContainersComponent.Status' | translate}} <span class="badge-span">{{selectContainer.containerStatusStr}}</span></li>
+                    <li class="list-group-item">{{'ContainersComponent.Status' | translate}} <span class="badge-span">{{ selectContainer.containerStatusStr | statusKey | translate }}</span></li>
                     <li class="list-group-item">{{'ContainersComponent.Destination' | translate}} <span class="badge-span">{{selectContainer.destinationName}}</span></li>
                     <li class="list-group-item">{{'ContainersComponent.DeparturePort' | translate}} <span class="badge-span">{{selectContainer.departurePortName}}</span></li>
                     <li class="list-group-item">{{'ContainersComponent.ShippingCompany' | translate}} <span class="badge-span">{{selectContainer.shippingCompanyName}}</span></li>
@@ -609,7 +609,7 @@
                   <!-- <a href="src/images/abbasmotor-invoice.pdf" target="_blank" type="button" class="btn btn-inverse-print btn-icon" title="Print">
                     <i class="mdi mdi-printer"></i>
                   </a>
-                  <button type="button" class="btn btn-inverse-cut btn-icon" title="Delete images">
+                  <button type="button" class="btn btn-inverse-cut btn-icon" title="{{ 'General.DeleteImages' | translate }}">
                     <i class="mdi mdi-content-cut"></i>
                   </button> -->
                   <button *ngIf="hasPermission" type="button" data-toggle="modal" data-target="#addAutoModal" class="btn btn-inverse-add btn-icon" title="{{'ContainersComponent.AddNew' | translate}}" (click)="openDialog()">
@@ -625,7 +625,7 @@
                 </div>
                 <!-- pagination -->
                  <!--<div class="text-center">       
-                    <pagination-controls [responsive]='true' (pageChange)="page = $event" id='first'></pagination-controls>                  
+                    <pagination-controls previousLabel="{{ 'General.Previous' | translate }}" nextLabel="{{ 'General.Next' | translate }}" [responsive]='true' (pageChange)="page = $event" id='first'></pagination-controls>                  
                 </div>-->
                  <!-- // added code to get the data from the data base per page size -->
                 <!-- Styled custom pagination to match ngx-pagination style -->
@@ -635,18 +635,18 @@
                     class="btn btn-sm btn-primary me-2" 
                     (click)="prevPage()" 
                     [disabled]="currentPage === 1">
-                    Previous
+                    {{ 'General.Previous' | translate }}
                   </button>
                   
                   <span class="align-middle">
-                    Page {{ currentPage }} of {{ Math.ceil(totalRecords / pageSize) }}
+                    {{ 'General.Page' | translate }} {{ currentPage }} {{ 'General.Of' | translate }} {{ Math.ceil(totalRecords / pageSize) }}
                   </span>
 
                   <button 
                     class="btn btn-sm btn-primary ms-2" 
                     (click)="nextPage()" 
                     [disabled]="(currentPage * pageSize) >= totalRecords">
-                    Next
+                    {{ 'General.Next' | translate }}
                   </button>
                 </div>
               </div>
@@ -669,7 +669,7 @@
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                      <button type="button" class="btn btn-primary" (click)="deleteImages(selectContainer.id)">Yes</button>
+                      <button type="button" class="btn btn-primary" (click)="deleteImages(selectContainer.id)">{{ 'General.Yes' | translate }}</button>
                     </div>
                   </div>
                 </div>
@@ -721,7 +721,7 @@
                       <td>
                         <ul>
                           <li><strong>{{'ContainersComponent.Line' | translate}}: </strong> <br>{{item.shippingCompanyName}} </li>
-                          <li><strong>{{'ContainersComponent.Status' | translate}}: </strong> <br> {{item.containerStatusStr}} </li>
+                          <li><strong>{{'ContainersComponent.Status' | translate}}: </strong> <br> {{ item.containerStatusStr | statusKey | translate }} </li>
                         </ul>
                       </td>
                       
@@ -765,7 +765,7 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header"  [id]="'heading'+item.labeltext">
                     <button class="accordion-button" [ngClass]="{'collapsed': !item.show}" type="button" data-toggle="collapse" [attr.data-target]="'#' + item.labeltext" aria-expanded="true" [attr.aria-controls]="'#' + item.label" (click)="onChangeAccordion(item)">
-                      {{item.label}}
+                      {{ item.label == 'All' ? ('General.All' | translate) : item.label }}
                     </button>
                   </h2>
                   <div  [id]="item.labeltext" class="accordion-collapse collapse"  [ngClass]="{'show': item.show}" [attr.aria-labelledby]="'heading'+item.labeltext" data-parent="#accordionExample">

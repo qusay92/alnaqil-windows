@@ -130,7 +130,7 @@
                         <form class="edit-form"  [formGroup]="ngForm" (keyup.enter)="editProfile()">
                           <div class="form-group password-form">
                             <label for="name"> {{'AdminLayoutComponent.Name' | translate}}<span></span></label>
-                            <input id="Username" name="Username" placeholder="Username" type="text" formControlName="name" [(ngModel)] ='model.userName' readonly>
+                            <input id="Username" name="Username" placeholder="{{ 'General.Username' | translate }}" type="text" formControlName="name" [(ngModel)] ='model.userName' readonly>
                            </div>
                           <div class="form-group password-form">
                             <label for="password"> {{'AdminLayoutComponent.Password' | translate}}<span></span></label>
@@ -177,7 +177,7 @@
                   <form class="edit-form"  [formGroup]="ngForm" (keyup.enter)="editProfile()">
                     <div class="form-group">
                       <label for="name"> {{'AdminLayoutComponent.Name' | translate}}<span>*</span></label>
-                      <label id="Username" name="Username" placeholder="Username" type="text" formControlName="name" [(ngModel)] ='model.name'>{{model.name}} </label>
+                      <label id="Username" name="Username" placeholder="{{ 'General.Username' | translate }}" type="text" formControlName="name" [(ngModel)] ='model.name'>{{model.name}} </label>
                      </div>
                     <div class="form-group password-form">
                       <label for="password"> {{'AdminLayoutComponent.Password' | translate}}<span>*</span></label>

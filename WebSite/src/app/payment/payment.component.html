@@ -131,7 +131,7 @@
               <input  pInputText  type="text" name="vinNo" placeholder="{{'AutosComponent.VinNumber' | translate}}" id="vinNo" formControlName="vinNo">
               </div>
                 <!-- <div class="form-group large-2 small-6 cell">
-                    <input class="form-control" type="text" name="vin" placeholder="Vin No" value="" formControlName="vinNo">
+                    <input class="form-control" type="text" name="vin" placeholder="{{ 'General.VinNo' | translate }}" value="" formControlName="vinNo">
                 </div> -->
                 <div class="form-group  large-2 small-6 cell" >
                   <p-calendar useUtc  dateFormat="dd/mm/yy" formControlName="purchaseDate" placeholder="{{'PaymentComponent.PaymentDate' | translate}}"></p-calendar>
@@ -176,14 +176,14 @@
                       <i class="mdi mdi-magnify"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Search" aria-label="search" aria-describedby="search">
+                  <input type="text" class="form-control" placeholder="{{ 'General.Search' | translate }}" aria-label="search" aria-describedby="search">
                 </div> -->
                 <div class="icons-buttons">
                   <a *ngIf="hasPermission" class="btn btn-primary btn-icon-text" href="#" type="button" data-toggle="modal" data-target="#addPaymentModal" (click)="openInvoice()">{{'PaymentComponent.AddPayment' | translate}} <i class="mdi mdi-plus-box"></i></a>
                   <button type="button" class="btn btn-inverse-print btn-icon" title="{{'PaymentComponent.Print' | translate}}" (click)="print()" *ngIf="showPrint && hasPermission">
                       <i class="mdi mdi-printer"></i>
                   </button>      
-                  <!-- <button type="button" data-toggle="modal" data-target="#addPaymentModal" class="btn btn-inverse-add btn-icon" title="add new">
+                  <!-- <button type="button" data-toggle="modal" data-target="#addPaymentModal" class="btn btn-inverse-add btn-icon" title="{{ 'General.AddNew' | translate }}">
                       <i class="mdi mdi-plus"></i>
                   </button> -->
                   <button type="button" data-toggle="modal" data-target="#deleteModal" class="btn btn-inverse-danger btn-icon" title="{{'PaymentComponent.Delete' | translate}}" (click)="openDeleteAllDialog()" *ngIf="hasPermission && checkedPayments > 1">
@@ -231,7 +231,7 @@
                           </div>
                           <div class="main">
                             <ng-image-slider [animationSpeed]="0.1" [infinite]="true"[hidden]="images.length==0" [images]="images" #nav></ng-image-slider>
-                                        <p [hidden]="images.length>0" > No Images available </p>
+                                        <p [hidden]="images.length>0" > {{ 'General.NoImagesAvailable' | translate }} </p>
 
                             <!-- <div class="slider slider-info">
                               <p-galleria #galleria [value]="images" [(activeIndex)]="activeIndex"
@@ -274,7 +274,7 @@
                                 <li class="list-group-item">{{'PaymentComponent.BuyingAccount' | translate}} <span class="badge-span">{{selectAuto.buyAccountName}}</span></li>
                                 <li class="list-group-item">{{'PaymentComponent.City' | translate}}  <span class="badge-span">{{selectAuto.cityName}}</span></li>
                                 <li class="list-group-item">{{'PaymentComponent.LoadPort' | translate}} <span class="badge-span">{{selectAuto.loadPortName}}</span></li>
-                                <li class="list-group-item">{{'PaymentComponent.Status' | translate}} <span class="badge-span">{{selectAuto.carStatusStr}}</span></li>
+                                <li class="list-group-item">{{'PaymentComponent.Status' | translate}} <span class="badge-span">{{ selectAuto.carStatusStr | statusKey | translate }}</span></li>
                               </ul>
                             </div>
                             <div class="col-md-6">
@@ -355,7 +355,7 @@
                           <ul>
                             <li>
                               <div class="dropdown">
-                                  <button class="dropbtn">Actions</button>
+                                  <button class="dropbtn">{{ 'General.Actions' | translate }}</button>
                                   <div class="dropdown-content" style="min-width: 85px;right: auto;">
                                   <a href="#" data-toggle="modal" data-target="#addPaymentModal" (click)="EditInvoice(payDetails)">{{'PaymentComponent.Edit' | translate}} </a>
                                   <a href="#" class="delete-item" data-toggle="modal" data-target="#deleteModal" (click)="openDeleteDialog(payDetails)">{{'PaymentComponent.Delete' | translate}}</a>
@@ -369,7 +369,7 @@
                 </table>
               </div>
               <!--<div class="pagination text-center">
-                <pagination-controls [responsive]='true' (pageChange)="pagepayment = $event"></pagination-controls>
+                <pagination-controls previousLabel="{{ 'General.Previous' | translate }}" nextLabel="{{ 'General.Next' | translate }}" [responsive]='true' (pageChange)="pagepayment = $event"></pagination-controls>
               </div>-->
               <!-- added code to get the data from the data base per page size-->
               <div class="text-center mt-3">
@@ -378,18 +378,18 @@
                     class="btn btn-sm btn-primary me-2" 
                     (click)="prevPage()" 
                     [disabled]="currentPage === 1">
-                    Previous
+                    {{ 'General.Previous' | translate }}
                   </button>
                   
                   <span class="align-middle">
-                    Page {{ currentPage }} of {{ Math.ceil(totalRecords / pageSize) }}
+                    {{ 'General.Page' | translate }} {{ currentPage }} {{ 'General.Of' | translate }} {{ Math.ceil(totalRecords / pageSize) }}
                   </span>
 
                   <button 
                     class="btn btn-sm btn-primary ms-2" 
                     (click)="nextPage()" 
                     [disabled]="(currentPage * pageSize) >= totalRecords">
-                    Next
+                    {{ 'General.Next' | translate }}
                   </button>
                 </div>
               </div>

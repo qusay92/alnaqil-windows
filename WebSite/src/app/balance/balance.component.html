@@ -47,7 +47,7 @@
                   </div>
 
                   <!-- <div class="balance-btns">
-                    <button type="button" class="btn btn-inverse-print btn-icon" title="print">
+                    <button type="button" class="btn btn-inverse-print btn-icon" title="{{ 'General.Print' | translate }}">
                       <i class="mdi mdi-printer"></i>
                     </button>
                   </div> -->
@@ -154,7 +154,7 @@
                     </table>
                   </div>
                   <div class="pagination text-center">
-                    <pagination-controls [responsive]='true' (pageChange)="openpage = $event" id='first'></pagination-controls>
+                    <pagination-controls previousLabel="{{ 'General.Previous' | translate }}" nextLabel="{{ 'General.Next' | translate }}" [responsive]='true' (pageChange)="openpage = $event" id='first'></pagination-controls>
                   </div>
                 </div>
 
@@ -213,7 +213,7 @@
                   </div>
 
                   <!-- <div class="balance-btns">
-                    <button type="button" class="btn btn-inverse-print btn-icon" title="print">
+                    <button type="button" class="btn btn-inverse-print btn-icon" title="{{ 'General.Print' | translate }}">
                       <i class="mdi mdi-printer"></i>
                     </button>
                   </div> -->
@@ -307,7 +307,7 @@
                     </table>
                   </div>
                   <div class="pagination text-center">
-                    <pagination-controls [responsive]='true' (pageChange)="paidpage = $event" id='second'></pagination-controls>
+                    <pagination-controls previousLabel="{{ 'General.Previous' | translate }}" nextLabel="{{ 'General.Next' | translate }}" [responsive]='true' (pageChange)="paidpage = $event" id='second'></pagination-controls>
                   </div>
                 </div>
 
@@ -364,7 +364,7 @@
                   </div>
 
                   <!-- <div class="balance-btns">
-                    <button type="button" class="btn btn-inverse-print btn-icon" title="print">
+                    <button type="button" class="btn btn-inverse-print btn-icon" title="{{ 'General.Print' | translate }}">
                       <i class="mdi mdi-printer"></i>
                     </button>
                   </div> -->
@@ -458,7 +458,7 @@
                     </table>
                   </div>
                   <div class="pagination text-center">
-                    <pagination-controls [responsive]='true' (pageChange)="page = $event" id='three'></pagination-controls>
+                    <pagination-controls previousLabel="{{ 'General.Previous' | translate }}" nextLabel="{{ 'General.Next' | translate }}" [responsive]='true' (pageChange)="page = $event" id='three'></pagination-controls>
                   </div>
                 </div>
 
@@ -574,7 +574,7 @@
                     </table>
                   </div>
                   <div class="pagination text-center">
-                    <pagination-controls [responsive]='true' (pageChange)="clientpage = $event" id='four'></pagination-controls>
+                    <pagination-controls previousLabel="{{ 'General.Previous' | translate }}" nextLabel="{{ 'General.Next' | translate }}" [responsive]='true' (pageChange)="clientpage = $event" id='four'></pagination-controls>
                   </div>
           
                 </div>
@@ -619,7 +619,7 @@
                         </div>
                         <div class="main">
                           <ng-image-slider [animationSpeed]="0.1" [infinite]="true"[hidden]="images.length==0" [images]="images" #nav></ng-image-slider>
-                                        <p [hidden]="images.length>0" > No Images available </p>
+                                        <p [hidden]="images.length>0" > {{ 'General.NoImagesAvailable' | translate }} </p>
                           <!-- <div class="slider slider-info">
                             <p-galleria #galleria [value]="images" [(activeIndex)]="activeIndex"
                             [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '640px', 'margin': '0 auto'}" [numVisible]="5"
@@ -661,7 +661,7 @@
                               <li class="list-group-item">{{'BalanceComponent.BuyingAccount' | translate}} <span class="badge-span">{{selectAuto.buyAccountName}}</span></li>
                               <li class="list-group-item">{{'BalanceComponent.City' | translate}}  <span class="badge-span">{{selectAuto.cityName}}</span></li>
                               <li class="list-group-item">{{'BalanceComponent.LoadPort' | translate}} <span class="badge-span">{{selectAuto.loadPortName}}</span></li>
-                              <li class="list-group-item">{{'BalanceComponent.Status' | translate}} <span class="badge-span">{{selectAuto.carStatusStr}}</span></li>
+                              <li class="list-group-item">{{'BalanceComponent.Status' | translate}} <span class="badge-span">{{ selectAuto.carStatusStr | statusKey | translate }}</span></li>
                 
                             </ul>
                           </div>
