@@ -250,15 +250,22 @@ paginate=appSettings.pageinate;
     const htmlElement = document.documentElement;
     htmlElement.setAttribute('lang', lang);
 
-    if (lang === 'ar') {
-      htmlElement.setAttribute('dir', 'rtl');
-      document.body.classList.add('rtl');
-      document.body.classList.remove('ltr');
-    } else {
-      htmlElement.setAttribute('dir', 'ltr');
-      document.body.classList.add('ltr');
-      document.body.classList.remove('rtl');
-    }
+    // Direction is forced to LTR regardless of language (customer requirement).
+    // To restore direction-based-on-language, uncomment the block below and
+    // remove the forced-LTR lines above it.
+    htmlElement.setAttribute('dir', 'ltr');
+    document.body.classList.add('ltr');
+    document.body.classList.remove('rtl');
+
+    // if (lang === 'ar') {
+    //   htmlElement.setAttribute('dir', 'rtl');
+    //   document.body.classList.add('rtl');
+    //   document.body.classList.remove('ltr');
+    // } else {
+    //   htmlElement.setAttribute('dir', 'ltr');
+    //   document.body.classList.add('ltr');
+    //   document.body.classList.remove('rtl');
+    // }
 
     this.HandleResources();
 

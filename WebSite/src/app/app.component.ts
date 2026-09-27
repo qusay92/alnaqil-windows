@@ -52,16 +52,22 @@ export class AppComponent {
     // Set lang attribute
     htmlElement.setAttribute('lang', currentLang);
 
-    // Set dir attribute for RTL/LTR
-    if (currentLang === 'ar') {
-      htmlElement.setAttribute('dir', 'rtl');
-      this.renderer.addClass(this.document.body, 'rtl');
-      this.renderer.removeClass(this.document.body, 'ltr');
-    } else {
-      htmlElement.setAttribute('dir', 'ltr');
-      this.renderer.addClass(this.document.body, 'ltr');
-      this.renderer.removeClass(this.document.body, 'rtl');
-    }
+    // Direction is forced to LTR regardless of language (customer requirement).
+    // To restore direction-based-on-language, uncomment the block below and
+    // remove the forced-LTR lines above it.
+    htmlElement.setAttribute('dir', 'ltr');
+    this.renderer.addClass(this.document.body, 'ltr');
+    this.renderer.removeClass(this.document.body, 'rtl');
+
+    // if (currentLang === 'ar') {
+    //   htmlElement.setAttribute('dir', 'rtl');
+    //   this.renderer.addClass(this.document.body, 'rtl');
+    //   this.renderer.removeClass(this.document.body, 'ltr');
+    // } else {
+    //   htmlElement.setAttribute('dir', 'ltr');
+    //   this.renderer.addClass(this.document.body, 'ltr');
+    //   this.renderer.removeClass(this.document.body, 'rtl');
+    // }
   }
 
   private handleBodyClass(url: string): void {
